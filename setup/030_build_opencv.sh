@@ -4,7 +4,6 @@ V=3.4.2
 TESS_INC_DIR=/usr/local/include/tesseract
 TESS_LIBRARY=/usr/local/lib/libtesseract.so.4
 
-# numpy は latest 版を入れる
 sudo pip3 install numpy
 
 sudo apt-get install \
@@ -128,13 +127,13 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D WITH_CUFFT=OFF \
       -D WITH_IPP=OFF \
       -D WITH_IPP_A=OFF \
-      -D WITH_OPENMP=OFF \
+      -D WITH_OPENMP=ON \
       -D WITH_PTHREADS_PF=OFF \
       -D WITH_PVAPI=OFF \
       -D WITH_MATLAB=OFF \
       -D WITH_XIMEA=OFF \
       -D WITH_XINE=OFF \
-      -D WITH_OPENCL=OFF \
+      -D WITH_OPENCL=ON \
       -D WITH_OPENCLAMDBLAS=OFF \
       -D WITH_OPENCLAMDFFT=OFF \
       -D WITH_OPENCL_SVM=OFF \
@@ -144,7 +143,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D ENABLE_FAST_MATH=ON \
       -D ENABLE_NEON=ON \
       -D ENABLE_VFPV3=ON \
-      -D ENABLE_PROFILING=OFF \
+      -D ENABLE_PROFILING=ON \
       -D ENABLE_COVERAGE=OFF \
       -D ENABLE_OMIT_FRAME_POINTER=ON \
       -D BUILD_opencv_apps=ON \
@@ -207,6 +206,32 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D BUILD_opencv_cudev=OFF \
       -D Tesseract_INCLUDE_DIR=$TESS_INC_DIR \
       -D Tesseract_LIBRARY=$TESS_LIBRARY \
-      .. && make && sudo checkinstall
+      .. && make
+
+author=thortex
+
+R=`date "+%Y%m%d"`
+GCC_VER=`gcc --version | head -1`
+
+cat << EOF > description-pak
+OpenCV for Raspberry Pi with OpenCL features.
+Built with $GCC_VER
+EOF
+
+export PATH="/usr/lib/gcc/arm-linux-gnueabihf/6:$PATH"
+
+sudo dpkg --purge opencv
+
+sudo -E checkinstall --type=debian \
+      --install=yes \
+      --default \
+      --pkgname=opencv \
+      --pkgversion=$V \
+      --pkgrelease=$R \
+      --maintainer=$author \
+      --provides=opencv \
+      --summary="OpenCV for Raspberry Pi" 
+
+
 
 
