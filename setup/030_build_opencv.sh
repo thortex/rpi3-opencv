@@ -223,7 +223,7 @@ export PATH="/usr/lib/gcc/arm-linux-gnueabihf/6:$PATH"
 sudo dpkg --purge opencv
 
 sudo -E checkinstall --type=debian \
-      --install=yes \
+      --install=no \
       --default \
       --pkgname=opencv \
       --pkgversion=$V \
