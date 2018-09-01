@@ -8,7 +8,7 @@ echo -n '' > $F
 for x in a b c d e f g; do
     X=${U}${R}/opencv_${V}_armhf.xa$x
     wget -c $X
-    cat $X >> $F
+    cat ./opencv_${V}_armhf.xa$x >> $F
 done
 
 sha256sum -c SHA256SUM
