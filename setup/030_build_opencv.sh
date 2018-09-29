@@ -1,6 +1,6 @@
 #!/bin/sh -x
 
-V=3.4.2
+V=3.4.3
 TESS_INC_DIR=/usr/local/include/tesseract
 TESS_LIBRARY=/usr/local/lib/libtesseract.so.4
 
@@ -80,7 +80,6 @@ export CXXFLAGS='-mtune=cortex-a53 -march=armv8-a+crc -mcpu=cortex-a53 -mfpu=cry
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D CMAKE_INSTALL_PREFIX=/usr/local \
       -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${V}/modules \
-      -D BUILD_WITH_DEBUG_INFO=ON \
       -D BUILD_SHARED_LIBS=ON \
       -D BUILD_CUDA_STUBS=ON \
       -D BUILD_DOCS=OFF \
@@ -143,8 +142,6 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D ENABLE_FAST_MATH=ON \
       -D ENABLE_NEON=ON \
       -D ENABLE_VFPV3=ON \
-      -D ENABLE_PROFILING=ON \
-      -D ENABLE_COVERAGE=OFF \
       -D ENABLE_OMIT_FRAME_POINTER=ON \
       -D BUILD_opencv_apps=ON \
       -D BUILD_opencv_aruco=ON \
