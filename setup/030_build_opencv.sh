@@ -1,6 +1,6 @@
 #!/bin/sh -x
 
-V=3.4.3
+V=4.0.0-alpha
 TESS_INC_DIR=/usr/local/include/tesseract
 TESS_LIBRARY=/usr/local/lib/libtesseract.so.4
 
