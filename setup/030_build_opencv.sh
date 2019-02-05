@@ -1,13 +1,14 @@
 #!/bin/sh -x
 
-V=4.0.0-alpha
+V=4.0.1
 TESS_INC_DIR=/usr/local/include/tesseract
 TESS_LIBRARY=/usr/local/lib/libtesseract.so.4
 
 sudo pip3 install numpy
 
-sudo apt-get install \
+sudo apt-get install -y \
      build-essential \
+     gettext \
      ccache \
      cmake \
      pkg-config \
@@ -67,11 +68,9 @@ sudo apt-get install \
      ffmpeg 
 
 
-wget -c -O opencv.zip https://github.com/opencv/opencv/archive/${V}.zip
-wget -c -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/${V}.zip
-unzip opencv.zip
-unzip opencv_contrib.zip
-cd opencv-${V}
+git clone --depth=1 -b ${V} --single-branch https://github.com/opencv/opencv.git
+git clone --depth=1 -b ${V} --single-branch https://github.com/opencv/opencv_contrib.git
+cd opencv
 mkdir -p build
 cd build
 
@@ -79,7 +78,7 @@ export CXXFLAGS='-mtune=cortex-a53 -march=armv8-a+crc -mcpu=cortex-a53 -mfpu=cry
 
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D CMAKE_INSTALL_PREFIX=/usr/local \
-      -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${V}/modules \
+      -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
       -D BUILD_SHARED_LIBS=ON \
       -D BUILD_CUDA_STUBS=ON \
       -D BUILD_DOCS=OFF \

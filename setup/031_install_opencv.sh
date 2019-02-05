@@ -1,12 +1,12 @@
 #!/bin/bash -x
-YMD=20181012
-V=4.0.0-alpha
-D=opencv-${V}/build/
+YMD=20190205
+V=4.0.1
+D=opencv/build/
 F=opencv_${YMD}_armhf.deb
 P=${F/opencv_/opencv_$V-}
 
-if [ -f "${D}${F}" ] ; then
-    mv ${D}${F} ./release/${P}
+if [ -f "${D}${P}" ] ; then
+    mv ${D}${P} ./release/${P}
 fi
 
 sudo dpkg -i ./release/${P}

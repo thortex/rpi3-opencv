@@ -1,8 +1,8 @@
 #!/bin/sh -x
 # Versions
-R=4.0.0-beta.3
-LEPT_VER=1.76.0
-TESS_VER=4.0.0-beta.3
+R=4.0.0
+LEPT_VER=1.77.0
+TESS_VER=4.0.0
 # base url.
 U=https://github.com/thortex/rpi3-tesseract/releases/download/
 # Install Leptonica

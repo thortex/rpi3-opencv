@@ -27,7 +27,6 @@ libgcc1 \
 libgcrypt20 \
 libgflags2v5 \
 libgfortran3 \
-libgif7 \
 libglapi-mesa \
 libgles2-mesa \
 libglib2.0-0 \
@@ -42,8 +41,8 @@ libgphoto2-port12 \
 libgraphite2-3 \
 libgsm1 \
 libgssapi-krb5-2 \
-libgstreamer-plugins-base1.0-0 \
 libgstreamer1.0-0 \
+libgstreamer-plugins-base1.0-0 \
 libharfbuzz0b \
 libhdf5-100 \
 libhogweed4 \
@@ -79,6 +78,7 @@ libqt5core5a \
 libqt5gui5 \
 libqt5test5 \
 libqt5widgets5 \
+libraspberrypi0 \
 libraw1394-11 \
 libshine3 \
 libsnappy1v5 \
@@ -95,13 +95,10 @@ libtheora0 \
 libtiff5 \
 libtwolame0 \
 libudev1 \
-libunicap2 \
 libusb-1.0-0 \
-libv4l-0 \
-libv4lconvert0 \
+libva1 \
 libva-drm1 \
 libva-x11-1 \
-libva1 \
 libvdpau1 \
 libvorbis0a \
 libvorbisenc2 \
@@ -114,9 +111,9 @@ libx11-6 \
 libx264-148 \
 libx265-95 \
 libxau6 \
+libxcb1 \
 libxcb-render0 \
 libxcb-shm0 \
-libxcb1 \
 libxdmcp6 \
 libxext6 \
 libxfixes3 \
