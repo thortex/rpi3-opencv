@@ -202,6 +202,8 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D BUILD_opencv_cudev=OFF \
       -D Tesseract_INCLUDE_DIR=$TESS_INC_DIR \
       -D Tesseract_LIBRARY=$TESS_LIBRARY \
+      -D OPENCL_INCLUDE_DIR=/usr/include \
+      -D OPENCL_LIBRARY=/usr/lib/arm-linux-gnueabihf/libOpenCL.so \
       .. && make
 
 author=thortex

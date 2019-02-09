@@ -1,9 +1,12 @@
 # OpenCV for Raspberry Pi 3
 
-A prebuilt binary debian package of OpenCV 4.0.1 for Raspberry Pi 3. It depends on Tesseract 4 (4.0.0).
+A prebuilt binary debian package of OpenCV 4.0.1 for Raspberry Pi 3. It depends on Tesseract 4 and VC4CL by doe300.
 
 ## How to Install
 
+First, install rpi3-vc4cl binary packages which describes in https://github.com/thortex/rpi3-vc4cl/ .
+
+Then, Install Leptonica, Tesseract OCR, and OpenCV debian packages by typing the following steps:
 ```
 git clone https://github.com/thortex/rpi3-opencv.git
 cd rpi3-opencv/release

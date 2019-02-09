@@ -121,6 +121,7 @@ libxml2 \
 libxrender1 \
 libxvidcore4 \
 libzvbi0 \
+ocl-icd-libopencl1 \
 raspi-copies-and-fills \
 tesseract-ocr \
 zlib1g \
