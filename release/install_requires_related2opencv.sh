@@ -1,6 +1,6 @@
 #!/bin/sh -x
 sudo apt-get install \
-leptonica \
+liblept5 \
 libaec0 \
 libatlas3-base \
 libatomic1 \
